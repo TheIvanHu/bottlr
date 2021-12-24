@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 
-// TODO: Create ../../models/Bottle.js
 // Bottle Model
 const Bottle = require("../../models/Bottle");
 
