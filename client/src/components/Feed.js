@@ -25,11 +25,11 @@ class Feed extends Component {
     return (
       <Container>
         <ListGroup>
-          <TransitionGroup className='shopping-list'>
+          <TransitionGroup className='Feed'>
             {items.map(({ _id, name }) => (
               <CSSTransition key={_id} timeout={500} classNames='fade'>
                 <ListGroupItem>
-                  {this.props.isAuthenticated ? (
+  
                     <Button
                       className='remove-btn'
                       color='danger'
@@ -38,7 +38,6 @@ class Feed extends Component {
                     >
                       &times;
                     </Button>
-                  ) : null}
                   {name}
                 </ListGroupItem>
               </CSSTransition>
@@ -52,7 +51,7 @@ class Feed extends Component {
 
 const mapStateToProps = state => ({
   item: state.item,
-  isAuthenticated: state.auth.isAuthenticated
+  //isAuthenticated: state.auth.isAuthenticated
 });
 
 export default connect(

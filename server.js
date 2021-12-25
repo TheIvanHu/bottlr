@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 
 // DB Config
-const db = require("./config/keys").mongoURI;
+const db = require("./config/keys").mongoURI || 'mongodb://localhost:27017/bottlr'
 
 // Connect to Mongo
 mongoose
@@ -16,7 +16,7 @@ mongoose
     useUnifiedTopology: true,
     useNewUrlParser: true,
   })
-  .then(() => console.log("MongoDB Connected..."))
+  .then(() => console.log(`MongoDB Connected... on ${db}`))
   .catch((err) => console.log(err));
 
 // Use Routes
