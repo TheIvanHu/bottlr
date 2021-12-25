@@ -21,7 +21,11 @@
   },
   "homepage": "https://github.com/TheIvanHu/bottlr#readme",
   "dependencies": {
+    "concurrently": "^6.5.1",
     "express": "^4.17.2",
     "mongoose": "^6.1.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }
