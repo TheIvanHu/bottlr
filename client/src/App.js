@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Feed from './components/Feed'
 import {Provider} from 'react-redux';
 import store from './store';
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -13,6 +13,7 @@ class App extends Component{
         <div className="App">
         <AppNavbar />
       </div>
+      <Feed />
       </Provider>
       
     )

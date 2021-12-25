@@ -2,31 +2,31 @@ import React, { Component } from 'react';
 import { Container, ListGroup, ListGroupItem, Button } from 'reactstrap';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { connect } from 'react-redux';
-import { getItems, deleteItem } from '../actions/itemActions';
+import { getBottles, deleteBottle } from '../actions/bottleActions';
 import PropTypes from 'prop-types';
 
 class Feed extends Component {
   static propTypes = {
-    getItems: PropTypes.func.isRequired,
-    item: PropTypes.object.isRequired,
-    isAuthenticated: PropTypes.bool
+    getBottles: PropTypes.func.isRequired,
+    bottle: PropTypes.object.isRequired,
+    //isAuthenticated: PropTypes.bool
   };
 
   componentDidMount() {
-    this.props.getItems();
+    this.props.getBottles();
   }
 
   onDeleteClick = id => {
-    this.props.deleteItem(id);
+    this.props.deleteBottle(id);
   };
 
   render() {
-    const { items } = this.props.item;
+    const { bottles } = this.props.bottle;
     return (
       <Container>
         <ListGroup>
           <TransitionGroup className='Feed'>
-            {items.map(({ _id, name }) => (
+            {bottles.map(({ _id, country }) => (
               <CSSTransition key={_id} timeout={500} classNames='fade'>
                 <ListGroupItem>
   
@@ -38,7 +38,7 @@ class Feed extends Component {
                     >
                       &times;
                     </Button>
-                  {name}
+                  {country}
                 </ListGroupItem>
               </CSSTransition>
             ))}
@@ -50,11 +50,11 @@ class Feed extends Component {
 }
 
 const mapStateToProps = state => ({
-  item: state.item,
+  bottle: state.bottle,
   //isAuthenticated: state.auth.isAuthenticated
 });
 
 export default connect(
   mapStateToProps,
-  { getItems, deleteItem }
+  { getBottles, deleteBottle }
 )(Feed);

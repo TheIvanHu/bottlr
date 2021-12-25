@@ -13,19 +13,19 @@ const BottleSchema = new Schema({
   },
   editDate: {
     type: String,
-    required: true,
+    //required: true,
   },
   message: {
     type: String,
-    required: true,
+    //required: true,
   },
   tags: [{
     type: String,
-    required: true,
+    //required: true,
   }],
   views: {
     type: Number,
-    required: true,
+    //required: true,
   },
 });
 

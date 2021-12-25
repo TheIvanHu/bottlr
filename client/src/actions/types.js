@@ -1,0 +1,4 @@
+export const GET_BOTTLES = "GET_BOTTLES";
+export const ADD_BOTTLE = "ADD_BOTTLE";
+export const DELETE_BOTTLE= "DELETE_BOTTLE";
+export const BOTTLES_LOADING = "BOTTLED_LOADING"
