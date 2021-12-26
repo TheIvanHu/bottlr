@@ -8,9 +8,12 @@ const Bottle = require("../../models/Bottle");
 // @desc    Get A Bottle
 // @access  Public
 router.get("/", (req, res) => {
-  Bottle.findById(req.body.id)
-    .then((bottle) => res.json(bottle))
-    .catch(() => res.status(404).json({ success: false }));
+  Bottle.find()
+    .then(items => res.json(items))
+  
+  // Bottle.findById(req.body.id)
+  //   .then((bottle) => res.json(bottle))
+  //   .catch(() => res.status(404).json({ success: false }));
 });
 
 // @route   POST api/bottles
