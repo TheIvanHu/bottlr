@@ -44,7 +44,4 @@
     ]
   },
   "proxy": "http://localhost:3000"
-=======
-  "proxy": "https://localhost:5000/"
->>>>>>> Stashed changes
 }
