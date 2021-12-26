@@ -2,8 +2,6 @@ import { GET_BOTTLES, ADD_BOTTLE, DELETE_BOTTLE, BOTTLES_LOADING } from "../acti
 const initialState = {
   bottles : [],
   loading: false
-
-
 };
 
 export default function(state = initialState, action){

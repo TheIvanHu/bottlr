@@ -10,10 +10,10 @@ export const getBottles = () => dispatch =>{
       payload: res.data
     }))
 };
-export const addBottle = item =>{
+export const addBottle = bottle =>{
   return{
     type: ADD_BOTTLE,
-    payload: item
+    payload: bottle
   };
 };
 export const deleteBottle = id =>{

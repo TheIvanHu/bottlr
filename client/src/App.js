@@ -11,12 +11,12 @@ class App extends Component{
     return (
       <Provider store = {store}>
         <div className="App">
-        <AppNavbar />
-      </div>
-      <Feed />
+          <h1>Hello</h1>
+          <AppNavbar />
+          <Feed />
+        </div> 
       </Provider>
-      
-    )
+    );
   }
 }
 

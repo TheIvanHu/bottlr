@@ -21,7 +21,7 @@ class Feed extends Component {
   };
 
   render() {
-    const { bottles } = this.props.bottle;
+    const { bottles } = this.props.bottle || [];
     return (
       <Container>
         <ListGroup>
@@ -49,7 +49,7 @@ class Feed extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   bottle: state.bottle,
   //isAuthenticated: state.auth.isAuthenticated
 });
