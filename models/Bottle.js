@@ -5,16 +5,16 @@ const Schema = mongoose.Schema;
 const BottleSchema = new Schema({
   accountId: {
     type: String,
-    required: true,
+    //required: true,
+    default: "Anonymous"
   },
   country: {
     type: String,
     required: true,
   },
-  editDate: {
-    type: String,
-    default: "NA"
-    //required: true,
+  title: {
+    type: String, 
+    required: true,
   },
   message: {
     type: String,
@@ -29,8 +29,11 @@ const BottleSchema = new Schema({
   views: {
     type: Number,
     default: 0,
-    //required: true,
-  },
+    min: 0,
+},
+},
+{
+  timestamps: true
 });
 
 module.exports = Item = mongoose.model("bottle", BottleSchema);
