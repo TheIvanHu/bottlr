@@ -13,18 +13,22 @@ const BottleSchema = new Schema({
   },
   editDate: {
     type: String,
+    default: "NA"
     //required: true,
   },
   message: {
     type: String,
+    default:"blank"
     //required: true,
   },
   tags: [{
     type: String,
+    default: [],
     //required: true,
   }],
   views: {
     type: Number,
+    default: 0,
     //required: true,
   },
 });
