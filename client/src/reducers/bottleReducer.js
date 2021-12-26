@@ -1,6 +1,6 @@
 import { GET_BOTTLES, ADD_BOTTLE, DELETE_BOTTLE, BOTTLES_LOADING } from "../actions/types";
 const initialState = {
-  items : [],
+  bottles : [],
   loading: false
 
 
@@ -11,13 +11,13 @@ export default function(state = initialState, action){
     case GET_BOTTLES:
       return{
         ...state,
-        items: action.payload,
+        bottles: action.payload,
         loading: false
       }
     case DELETE_BOTTLE:
       return {
         ...state,
-        items:[action.payload, ...state.items]
+        bottles:[action.payload, ...state.bottles]
 
       }
     case BOTTLES_LOADING:
