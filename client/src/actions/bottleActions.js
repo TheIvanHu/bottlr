@@ -4,7 +4,7 @@ import { GET_BOTTLES, ADD_BOTTLE, DELETE_BOTTLE, BOTTLES_LOADING} from "./types"
 export const getBottles = () => dispatch =>{
   dispatch(setBottlesLoading());
   axios
-    .get('/api/bottles')
+    .get('api/bottles')
     .then(res => dispatch({
       type: GET_BOTTLES,
       payload: res.data

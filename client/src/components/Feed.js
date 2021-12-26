@@ -6,11 +6,11 @@ import { getBottles, deleteBottle } from '../actions/bottleActions';
 import PropTypes from 'prop-types';
 
 class Feed extends Component {
-  static propTypes = {
-    getBottles: PropTypes.func.isRequired,
-    bottle: PropTypes.object.isRequired,
-    //isAuthenticated: PropTypes.bool
-  };
+  // static propTypes = {
+  //   getBottles: PropTypes.func.isRequired,
+  //   bottle: PropTypes.object.isRequired,
+  //   //isAuthenticated: PropTypes.bool
+  // };
 
   componentDidMount() {
     this.props.getBottles();
@@ -48,10 +48,12 @@ class Feed extends Component {
     );
   }
 }
-
+Feed.propTypes = {
+  getBottles: PropTypes.func.isRequired,
+  bottle: PropTypes.object.isRequired,
+}
 const mapStateToProps = (state) => ({
   bottle: state.bottle,
-  //isAuthenticated: state.auth.isAuthenticated
 });
 
 export default connect(

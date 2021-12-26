@@ -1,7 +1,10 @@
+import { NavItem } from "reactstrap";
 import { GET_BOTTLES, ADD_BOTTLE, DELETE_BOTTLE, BOTTLES_LOADING } from "../actions/types";
 const initialState = {
   bottles : [],
   loading: false
+
+
 };
 
 export default function(state = initialState, action){
@@ -15,9 +18,14 @@ export default function(state = initialState, action){
     case DELETE_BOTTLE:
       return {
         ...state,
-        bottles:[action.payload, ...state.bottles]
+        bottles: state.bottles.filter(bottle => bottle._id !== action.payload)
 
       }
+    case ADD_BOTTLE:
+        return {
+          ...state,
+          items: [action.payload, ...state.bottles]
+        }
     case BOTTLES_LOADING:
       return {
         ...state,
