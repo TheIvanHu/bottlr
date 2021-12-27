@@ -31,14 +31,17 @@ class Home extends Component {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            padding: "10vh 10vw",
+            padding: "9vh 9vw",
             borderRadius: "15vh",
-            backdropFilter: 'blur(6vh)'
+            // backdropFilter: 'blur(6vh)'
           }}
           >
           <main class="px-3">
           <h1 style={{ color: "black", fontSize: "3rem" }}>
             Bottlr{" "}
+            <img src="bottlr.png"
+              height="48px"
+            />
           </h1>
           <p class="lead"> Share your bottled emotions <br/>
                 and read from others around the world</p>
