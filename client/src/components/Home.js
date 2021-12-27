@@ -17,7 +17,6 @@ class Home extends Component {
           flexDirection: "column",
           justifyContent: "center",
           alignitems: "center",
-          backgroundImage: "../assets/bottlrhome.jpg",
           backgroundColor: "white",
         }}>
 
@@ -37,12 +36,15 @@ class Home extends Component {
             backdropFilter: 'blur(10vh)'
           }}
         >
+          <main class="px-3">
           <h1 style={{ color: "black", fontSize: "3rem" }}>
-            Welcome To YelpCamp{" "}
+            Bottlr{" "}
           </h1>
-          <Button  style={{padding: '10px'}}>
-            View Campsites
-          </Button>
+          <p class="lead"> Share your bottled emotions <br/>
+                and read from others around the world</p>
+          <a href="/feed" class="btn btn-lg btn-secondary font-weight-bold border-black bg-white text-black">Enter and Start Browsing</a>
+          </main>
+          
         </div>
       </div>
       </Container>

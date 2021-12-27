@@ -21,7 +21,6 @@ class App extends Component{
         <div className="App">
           <AppNavbar />
           <Container>;
-}>
             <Main/>
           </Container>
           
