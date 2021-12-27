@@ -12,7 +12,6 @@ class Home extends Component {
         backgroundPosition: "center",
         backgroundSize: "cover",
         position: "fixed",
-        top: "0px",
         left: "0px",
         zIndex: "1002",
         minWidth: "100%",
@@ -20,7 +19,7 @@ class Home extends Component {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        alignitems: "center",
+        alignItems: "center",
         backgroundColor: "white",
       }}>
   
@@ -31,9 +30,10 @@ class Home extends Component {
             zIndex: "1",
             display: "flex",
             flexDirection: "column",
+            alignItems: "center",
             padding: "10vh 10vw",
             borderRadius: "15vh",
-            backdropFilter: 'blur(2vh)'
+            backdropFilter: 'blur(6vh)'
           }}
           >
           <main class="px-3">
