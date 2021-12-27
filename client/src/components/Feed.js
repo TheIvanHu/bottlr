@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, ListGroup, ListGroupItem, Button } from 'reactstrap';
+import { Container, ListGroup, ListGroupItem, Button, Card, CardBody, CardTitle, CardSubtitle, CardText } from 'reactstrap';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { connect } from 'react-redux';
 import { getBottles, deleteBottle } from '../actions/bottleActions';
@@ -25,24 +25,40 @@ class Feed extends Component {
     return (
       <Container>
         <ListGroup>
-          <TransitionGroup className='Feed'>
-            {bottles.map(({ _id, country }) => (
-              <CSSTransition key={_id} timeout={500} classNames='fade'>
+            {bottles.map(({ _id, country, title, message }) => (
                 <ListGroupItem>
-  
-                    <Button
-                      className='remove-btn'
-                      color='danger'
-                      size='sm'
-                      onClick={this.onDeleteClick.bind(this, _id)}
-                    >
-                      &times;
-                    </Button>
-                  {country}
+                    <div>
+                      <Card
+                        body
+                        color="light"
+                      >
+                        <CardBody>
+                          <CardTitle tag="h5">
+                            {title}
+                          </CardTitle>
+                          <CardSubtitle
+                            className="mb-2 text-muted"
+                            tag="h6"
+                          >
+                            {country}
+                          </CardSubtitle>
+                          <CardText>
+                            {message}
+                          </CardText>
+                          <Button
+                          className='remove-btn'
+                          color='danger'
+                          size='sm'
+                          onClick={this.onDeleteClick.bind(this, _id)}
+                        >
+                          &times;
+                        </Button>
+                        </CardBody>
+                      </Card>
+                    </div>
+
                 </ListGroupItem>
-              </CSSTransition>
             ))}
-          </TransitionGroup>
         </ListGroup>
       </Container>
     );

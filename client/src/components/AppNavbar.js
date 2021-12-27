@@ -42,12 +42,12 @@ class AppNavbar extends Component {
                         navbar
                     >
                         <NavItem>
-                        <NavLink href="/components/">
-                            Components
+                        <NavLink href="/feed">
+                            Feed
                         </NavLink>
                         </NavItem>
                         <NavItem>
-                        <NavLink href="https://github.com/reactstrap/reactstrap">
+                        <NavLink href="https://github.com/TheIvanHu/bottlr">
                             GitHub
                         </NavLink>
                         </NavItem>
