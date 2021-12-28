@@ -6,34 +6,34 @@ const BottleSchema = new Schema({
   accountId: {
     type: String,
     //required: true,
-    default: "Anonymous"
+    default: "Anonymous",
   },
   country: {
     type: String,
     required: true,
   },
   title: {
-    type: String, 
+    type: String,
     required: true,
   },
   message: {
     type: String,
-    default:"blank"
+    default: "blank",
     //required: true,
   },
-  tags: [{
-    type: String,
-    default: [],
-    //required: true,
-  }],
+  tags: [
+    {
+      type: String,
+      default: [],
+      //required: true,
+    },
+  ],
   views: {
     type: Number,
     default: 0,
     min: 0,
-},
-},
-{
-  timestamps: true
+  },
+  timestamps: true,
 });
 
-module.exports = Item = mongoose.model("bottle", BottleSchema);
+module.exports = Bottle = mongoose.model("bottle", BottleSchema);
