@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
+const config = require("config");
 
 const app = express();
 
@@ -8,8 +9,7 @@ const app = express();
 app.use(express.json());
 
 // DB Config
-const db =
-  require("./config/keys").mongoURI || "mongodb://localhost:27017/bottlr";
+const db = config.get("mongoURI") || "mongodb://localhost:27017/bottlr";
 
 // Connect to Mongo
 mongoose
@@ -23,6 +23,7 @@ mongoose
 // Use Routes
 app.use("/api/bottles", require("./routes/api/bottles"));
 app.use("/api/users", require("./routes/api/users"));
+app.use("/api/auth", require("./routes/api/auth"));
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === "production") {

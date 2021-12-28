@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const auth = require("../../middleware/auth");
 
 // Bottle Model
 const Bottle = require("../../models/Bottle");
@@ -34,8 +35,8 @@ router.get("/:bottleId", (req, res) => {
 
 // @route   POST api/bottles
 // @desc    Create A Bottle
-// @access  Public
-router.post("/", (req, res) => {
+// @access  Private
+router.post("/", auth, (req, res) => {
   if (!req.body.accountId || !req.body.country) {
     return res
       .status(400)
@@ -57,8 +58,8 @@ router.post("/", (req, res) => {
 
 // @route   POST api/bottles/:bottleId/edit
 // @desc    Edit A Bottle
-// @access  Public
-router.post("/:bottleId/edit", (req, res) => {
+// @access  Private
+router.post("/:bottleId/edit", auth, (req, res) => {
   if (!req.params.bottleId) {
     return res.status(400).json({ msg: "Need bottle ID", success: false });
   }
@@ -80,8 +81,8 @@ router.post("/:bottleId/edit", (req, res) => {
 
 // @route   DELETE api/Bottles/:bottleId
 // @desc    Delete A Bottle
-// @access  Public
-router.delete("/:bottleId", (req, res) => {
+// @access  Private
+router.delete("/:bottleId", auth, (req, res) => {
   Bottle.findById(req.params.bottleId)
     .then((bottle) => {
       if (bottle == null)
