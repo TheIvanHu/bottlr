@@ -29,5 +29,10 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "trailingComma": "es5"
   }
 }
