@@ -33,7 +33,8 @@ const BottleSchema = new Schema({
     default: 0,
     min: 0,
   },
-},  {timestamps: true}
+  },  
+  {timestamps: true}
 );
 
 module.exports = Bottle = mongoose.model("bottle", BottleSchema);

@@ -10,17 +10,21 @@ export const getBottles = () => dispatch =>{
       payload: res.data
     }))
 };
-export const addBottle = bottle =>{
-  return{
-    type: ADD_BOTTLE,
-    payload: bottle
-  };
+export const addBottle = bottle => dispatch =>{
+  axios
+    .post('/api/bottles', bottle)
+    .then(res => dispatch({
+      type: ADD_BOTTLE,
+      payload: res.data
+    }))
 };
-export const deleteBottle = id =>{
-  return{
-    type: DELETE_BOTTLE,
-    payload: id
-  };
+export const deleteBottle = id => dispatch =>{
+  axios
+    .delete(`/api/bottles/${id}`)
+    .then(res => dispatch({
+      type: DELETE_BOTTLE,
+      payload: id
+    }))
 };
 export const setBottlesLoading = () => {
   return {
