@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Container, Button } from 'reactstrap';
 import background from "../assets/background.jpg"
 import AppNavbar from './AppNavbar';
 
