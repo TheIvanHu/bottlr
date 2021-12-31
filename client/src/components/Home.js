@@ -33,7 +33,7 @@ class Home extends Component {
             alignItems: "center",
             padding: "9vh 9vw",
             borderRadius: "15vh",
-            backdropFilter: 'blur(6vh)'
+            // backdropFilter: 'blur(6vh)'
           }}
           >
           <main class="px-3">
