@@ -25,7 +25,8 @@ class AppNavbar extends Component {
   };
   render(){
     return(
-      <div>
+      <div className="row">
+
         <Navbar
           color="light"
           expand="sm"
@@ -61,7 +62,7 @@ class AppNavbar extends Component {
                 >
                     Options
                 </DropdownToggle>
-                <DropdownMenu right>
+                <DropdownMenu end>
                     <DropdownItem>
                     Option 1
                     </DropdownItem>
@@ -80,7 +81,8 @@ class AppNavbar extends Component {
             </NavbarText>
           </Collapse>
         </Navbar>
-      </div>
+        </div>
+
     )
   }   
 }
