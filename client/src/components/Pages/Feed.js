@@ -12,7 +12,7 @@ import {
 } from "reactstrap";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { connect } from "react-redux";
-import { getBottles, deleteBottle } from "../actions/bottleActions";
+import { getBottles, deleteBottle } from "../../actions/bottleActions";
 import PropTypes from "prop-types";
 
 class Feed extends Component {

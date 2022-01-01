@@ -1,4 +1,4 @@
-import React, { Component} from 'react';
+import React, { Component } from "react";
 import {
   Collapse,
   Navbar,
@@ -12,79 +12,54 @@ import {
   DropdownToggle,
   DropdownMenu,
   NavbarText,
-} from 'reactstrap';
+  Container,
+} from "reactstrap";
+const user = null;
 
 class AppNavbar extends Component {
   state = {
-    isOpen: false
-  }
+    isOpen: false,
+  };
+
   toggle = () => {
     this.setState({
-      isOpen: !this.state.isOpen
+      isOpen: !this.state.isOpen,
     });
   };
-  render(){
-    return(
+  render() {
+    return (
       <div className="row">
-
-        <Navbar
-          color="light"
-          expand="sm"
-          fixed="top"
-          light
-        >
-          <NavbarBrand href="/">
-          Bottlr
-          </NavbarBrand>
-          <NavbarToggler onClick={function noRefCheck(){}} />
+        <Navbar color="light" expand="sm" fixed="top" light>
+          <NavbarBrand href="/">Bottlr</NavbarBrand>
+          <NavbarToggler onClick={function noRefCheck() {}} />
           <Collapse navbar>
-            <Nav
-                className="me-auto"
-                navbar
-            >
+            <Nav className="me-auto" navbar>
               <NavItem>
-                <NavLink href="/feed">
-                    Feed
-                </NavLink>
+                <NavLink href="/feed">Feed</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="https://github.com/TheIvanHu/bottlr">
-                    GitHub
+                  GitHub
                 </NavLink>
               </NavItem>
-              <UncontrolledDropdown
-              inNavbar
-              nav
-              >
-                <DropdownToggle
-                    caret
-                    nav
-                >
-                    Options
-                </DropdownToggle>
-                <DropdownMenu end>
-                    <DropdownItem>
-                    Option 1
-                    </DropdownItem>
-                    <DropdownItem>
-                    Option 2
-                    </DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem>
-                    Reset
-                    </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
+
+              {!user && (
+                <NavItem>
+                  <NavLink href="/login">Login</NavLink>
+                </NavItem>
+              )}
+              {!user && (
+                <NavItem>
+                  <NavLink href="/signup">Signup</NavLink>
+                </NavItem>
+              )}
             </Nav>
-            <NavbarText>
-                Simple Text
-            </NavbarText>
+            {user && <NavbarText>Welcome {user}</NavbarText>}
           </Collapse>
         </Navbar>
-        </div>
-
-    )
-  }   
+      </div>
+    );
+  }
 }
 
 export default AppNavbar;
