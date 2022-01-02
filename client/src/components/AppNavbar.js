@@ -15,6 +15,8 @@ import {
   Container,
 } from "reactstrap";
 import RegisterModal from "./RegisterModal";
+import Logout from "./Logout";
+
 const user = null;
 
 class AppNavbar extends Component {
@@ -52,6 +54,11 @@ class AppNavbar extends Component {
               {!user && (
                 <NavItem>
                   <RegisterModal />
+                </NavItem>
+              )}
+              {user && (
+                <NavItem>
+                  <Logout />
                 </NavItem>
               )}
             </Nav>

@@ -58,6 +58,14 @@ export const register =
         });
       });
   };
+
+//Logout
+export const logout = () => {
+  return {
+    type: LOGOUT_SUCCESS,
+  };
+};
+
 // Setup config/headers and token
 export const tokenConfig = (getState) => {
   // Get token from localstorage
