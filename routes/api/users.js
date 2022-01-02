@@ -11,14 +11,14 @@ const User = require("../../models/User");
 // @desc    Create A User
 // @access  Public
 router.post("/", (req, res) => {
-  const { name, email, password } = req.body;
-  if (!name || !email || !password) {
+  const { username, email, password } = req.body;
+  if (!username || !email || !password) {
     return res.status(400).json({ msg: "please enter all fields" });
   }
   User.findOne({ email }).then((user) => {
     if (user) return res.status(400).json({ msg: "Email is already taken" });
     const newUser = new User({
-      name,
+      username,
       email,
       password,
     });
@@ -39,7 +39,7 @@ router.post("/", (req, res) => {
                 token,
                 user: {
                   id: user.id,
-                  name: user.name,
+                  username: user.username,
                   email: user.email,
                 },
               });

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Signup extends Component {
+class Register extends Component {
   render() {
     return (
       <div class="container d-flex justify-content-center align-items-center mt-5">
@@ -68,4 +68,4 @@ class Signup extends Component {
   }
 }
 
-export default Signup;
+export default Register;

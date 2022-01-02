@@ -5,7 +5,7 @@ import New from "./New";
 // import Signup from '../pages/Signup';
 import Feed from "./Pages/Feed";
 import Login from "./Pages/Login";
-import Signup from "./Pages/Signup";
+import Register from "./Pages/Register";
 const Main = () => {
   return (
     <Routes>
@@ -13,7 +13,7 @@ const Main = () => {
       <Route path="feed" element={<Feed />} />
       <Route path="bottles/new" element={<New />} />
       <Route path="login" element={<Login />} />
-      <Route path="signup" element={<Signup />} />
+      <Route path="register" element={<Register />} />
     </Routes>
   );
 };
