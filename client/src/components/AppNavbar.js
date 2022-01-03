@@ -34,7 +34,7 @@ class AppNavbar extends Component {
       <div className="row">
         <Navbar classname="navbar" color="light" expand="sm" fixed="top" light>
           <NavbarBrand href="/">Bottlr</NavbarBrand>
-          <NavbarToggler onClick={function noRefCheck() { }} />
+          <NavbarToggler onClick={function noRefCheck() {}} />
           <Collapse navbar>
             <Nav className="me-auto" navbar>
               <NavItem>
@@ -56,11 +56,9 @@ class AppNavbar extends Component {
                   <RegisterModal />
                 </NavItem>
               )}
-              {user && (
-                <NavItem>
-                  <Logout />
-                </NavItem>
-              )}
+              <NavItem>
+                <Logout />
+              </NavItem>
             </Nav>
             {user && <NavbarText>Welcome {user}</NavbarText>}
           </Collapse>
