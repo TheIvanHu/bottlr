@@ -32,7 +32,7 @@ class AppNavbar extends Component {
   render() {
     return (
       <div className="row">
-        <Navbar color="light" expand="sm" fixed="top" light>
+        <Navbar classname="navbar" color="light" expand="sm" fixed="top" light>
           <NavbarBrand href="/">Bottlr</NavbarBrand>
           <NavbarToggler onClick={function noRefCheck() { }} />
           <Collapse navbar>
