@@ -1,6 +1,48 @@
 import React, { Component } from "react";
+import { Alert } from "reactstrap";
+
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { login } from "../../actions/authActions";
+import { clearErrors } from "../../actions/errorActions";
 
 class Login extends Component {
+  state = {
+    email: "",
+    password: "",
+    msg: null,
+  };
+
+  static propTypes = {
+    isAuthenticated: PropTypes.bool,
+    error: PropTypes.object.isRequired,
+    login: PropTypes.func.isRequired,
+    clearErrors: PropTypes.func.isRequired,
+  };
+
+  componentDidUpdate(prevProps) {
+    const { error } = this.props;
+    if (error !== prevProps.error) {
+      if (error.id === "LOGIN_FAIL") {
+        this.setState({ msg: error.msg.msg });
+      } else {
+        this.setState({ msg: null });
+      }
+    }
+  }
+
+  onChange = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
+  onSubmit = (e) => {
+    e.preventDefault();
+    const { email, password } = this.state;
+    const user = { email, password };
+    console.log(user);
+    this.props.login(user);
+  };
+
   render() {
     return (
       <div class="container d-flex justify-content-center align-items-center mt-5 ">
@@ -12,18 +54,26 @@ class Login extends Component {
                 alt=""
                 class="card-img-top"
               />
+              {this.state.msg ? (
+                <Alert color="danger">{this.state.msg}</Alert>
+              ) : null}
               <div class="card-body">
                 <h5 class="card-title">Login</h5>
-                <form class="validated-form" novalidate>
+                <form
+                  class="validated-form"
+                  novalidate
+                  onSubmit={this.onSubmit}
+                >
                   <div class="mb-3">
                     <label class="form-label" for="username">
-                      Username
+                      Email
                     </label>
                     <input
                       class="form-control"
-                      type="text"
-                      id="username"
-                      name="username"
+                      type="email"
+                      id="email"
+                      name="email"
+                      onChange={this.onChange}
                       autofocus
                       required
                     />
@@ -37,6 +87,7 @@ class Login extends Component {
                       type="password"
                       id="password"
                       name="password"
+                      onChange={this.onChange}
                       required
                     />
                   </div>
@@ -51,4 +102,9 @@ class Login extends Component {
   }
 }
 
-export default Login;
+const mapStateToProps = (state) => ({
+  isAutheticated: state.auth.isAuthenticated,
+  error: state.error,
+});
+
+export default connect(mapStateToProps, { login, clearErrors })(Login);
