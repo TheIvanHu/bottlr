@@ -7,12 +7,12 @@ import {
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
-  DropdownItem,
-  DropdownToggle,
-  DropdownMenu,
+  // UncontrolledDropdown,
+  // DropdownItem,
+  // DropdownToggle,
+  // DropdownMenu,
   NavbarText,
-  Container,
+  // Container,
 } from "reactstrap";
 import RegisterModal from "./RegisterModal";
 import Logout from "./Logout";
@@ -34,7 +34,7 @@ class AppNavbar extends Component {
       <div className="row">
         <Navbar color="light" expand="sm" fixed="top" light>
           <NavbarBrand href="/">Bottlr</NavbarBrand>
-          <NavbarToggler onClick={function noRefCheck() {}} />
+          <NavbarToggler onClick={function noRefCheck() { }} />
           <Collapse navbar>
             <Nav className="me-auto" navbar>
               <NavItem>
