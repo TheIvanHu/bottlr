@@ -57,13 +57,13 @@ class AppNavbar extends Component {
 
     return (
       <div className="row">
-        <Navbar classname="navbar" color="light" expand="sm" fixed="top" light>
+        <Navbar className="navbar" expand="sm" fixed="top" light>
           <NavbarBrand href="/">Bottlr</NavbarBrand>
-          <NavbarToggler onClick={function noRefCheck() {}} />
+          <NavbarToggler onClick={function noRefCheck() { }} />
           <Collapse navbar>
             <Nav className="me-auto" navbar>
               <NavItem>
-                <NavLink href="/feed">Feed</NavLink>
+                <NavLink className="feed" href="/feed">Feed</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="https://github.com/TheIvanHu/bottlr">
