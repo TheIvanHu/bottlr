@@ -9,6 +9,17 @@ const BottleSchema = new Schema(
       //required: true,
       default: "Anonymous",
     },
+    geometry: {
+      type: {
+        type: String,
+        enum: ["Point"],
+        required: true,
+      },
+      coordinates: {
+        type: [Number],
+        required: true,
+      },
+    },
     country: {
       type: String,
       required: true,

@@ -2,6 +2,10 @@ const express = require("express");
 const router = express.Router();
 const auth = require("../../middleware/auth");
 
+const mbxGeocoding = require("@mapbox/mapbox-sdk/services/geocoding");
+const mapBoxToken =
+  "pk.eyJ1IjoidGhlaXZhbmh1IiwiYSI6ImNrb3o1OTRjbzBlc3QydW13dzRwNTQ5ZzAifQ.TYOeMJm3K0sBOgk74LNVtA";
+const geocoder = mbxGeocoding({ accessToken: mapBoxToken });
 // Bottle Model
 const Bottle = require("../../models/Bottle");
 
@@ -42,9 +46,17 @@ router.post("/", auth, (req, res) => {
       .status(400)
       .json({ msg: "Need account ID and country", success: false });
   }
+  geocoder
+    .forwardGeocode({
+      query: req.body.country,
+      limit: 1,
+    })
+    .send();
+
   const newBottle = new Bottle({
     accountId: req.body.accountId,
     country: req.body.country,
+    geometry: geoData.body.features[0].geometry,
     editDate: req.body.editDate,
     message: req.body.message,
     tags: req.body.tags,

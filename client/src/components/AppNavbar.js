@@ -11,7 +11,7 @@ import {
   // DropdownItem,
   // DropdownToggle,
   // DropdownMenu,
-  NavbarText,
+  //NavbarText,
   // Container,
 } from "reactstrap";
 import { connect } from "react-redux";

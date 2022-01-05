@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Container, Button } from "reactstrap";
-import AppNavbar from "./AppNavbar";
+//import { Container, Button } from "reactstrap";
+//import AppNavbar from "./AppNavbar";
 
 class New extends Component {
   render() {
