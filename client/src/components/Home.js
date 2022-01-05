@@ -37,7 +37,7 @@ class Home extends Component {
         >
           <main class="px-3">
             <h1 style={{ color: "black", fontSize: "3rem" }}>
-              Bottlr <img src="bottlr.png" height="48px" />
+              Bottlr <img src="bottlr.png" alt="bottlr.png" height="48px" />
             </h1>
             <p class="lead">
               {" "}

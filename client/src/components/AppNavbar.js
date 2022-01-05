@@ -11,7 +11,7 @@ import {
   // DropdownItem,
   // DropdownToggle,
   // DropdownMenu,
-  NavbarText,
+  //NavbarText,
   // Container,
 } from "reactstrap";
 import { connect } from "react-redux";
@@ -57,7 +57,7 @@ class AppNavbar extends Component {
 
     return (
       <div className="row">
-        <Navbar classname="navbar" color="light" expand="sm" fixed="top" light>
+        <Navbar className="navbar" color="light" expand="sm" fixed="top" light>
           <NavbarBrand href="/">Bottlr</NavbarBrand>
           <NavbarToggler onClick={function noRefCheck() {}} />
           <Collapse navbar>
